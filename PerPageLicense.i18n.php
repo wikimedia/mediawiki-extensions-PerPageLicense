@@ -28,3 +28,17 @@ $messages['qqq'] = array(
 $messages['de'] = array(
 	'perpagelicense-desc' => 'Ermöglicht das Festlegen einer Lizenz je Namensraum oder Seite',
 );
+
+/** French (français)
+ * @author Maxim21
+ */
+$messages['fr'] = array(
+	'perpagelicense-desc' => "Fait en sorte que les licences soient mises en place selon l'espace de nom ou la page",
+);
+
+/** Macedonian (македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'perpagelicense-desc' => 'Овозможува задавање а лиценци за поединечни именски простори или страници',
+);
