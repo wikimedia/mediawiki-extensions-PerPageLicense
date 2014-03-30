@@ -22,6 +22,13 @@ $messages['qqq'] = array(
 	'perpagelicense-desc' => '{{desc}}',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'perpagelicense-desc' => 'Permite definir llicencies pa cada espaciu de nomes o pa cada páxina',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  */
@@ -41,6 +48,13 @@ $messages['el'] = array(
  */
 $messages['fr'] = array(
 	'perpagelicense-desc' => "Fait en sorte que les licences soient mises en place selon l'espace de nom ou la page",
+);
+
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'perpagelicense-desc' => 'Permite establecer licenzas por espazo de nomes ou por páxina',
 );
 
 /** Japanese (日本語)
