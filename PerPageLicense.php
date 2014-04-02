@@ -38,8 +38,10 @@ $wgExtensionCredits['other'][] = array(
         'author' => '[https://mediawiki.org/User:Leucosticte Leucosticte]',
         'url' => 'https://mediawiki.org/wiki/Extension:PerPageLicense',
         'descriptionmsg' => 'perpagelicense-desc',
-        'version' => '1.0.1'
+        'version' => '1.1.0'
 );
+
+$wgMessagesDirs['PerPageLicense'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['PerPageLicense'] = dirname( __FILE__ ) . '/PerPageLicense.i18n.php';
 $wgHooks['ParserBeforeStrip'][] = 'PerPageLicense::getLicense';
 
