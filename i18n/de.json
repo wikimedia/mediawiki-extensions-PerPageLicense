@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Kghbln"
-        ]
-    },
-    "perpagelicense-desc": "Ermöglicht das Festlegen einer Lizenz je Namensraum oder Seite"
+	"@metadata": {
+		"authors": [
+			"Kghbln"
+		]
+	},
+	"perpagelicense-desc": "Ermöglicht das Festlegen einer Lizenz je Namensraum oder Seite"
 }
