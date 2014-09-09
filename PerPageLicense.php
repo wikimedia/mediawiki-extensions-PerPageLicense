@@ -47,39 +47,49 @@ $wgHooks['ParserBeforeStrip'][] = 'PerPageLicense::getLicense';
 
 // Page from which to obtain templates and associated licenses.
 $wgPerPageLicenseTemplatePage = 'MediaWiki:License-templates';
+
+// Path to license files.
+// Needs to be 1.24c because version_compare() works in confusing ways
+if ( version_compare( $wgVersion, '1.24c', '>=' ) ) {
+        $wgPerPageLicensePath = "{$wgScriptPath}/assets/licenses";
+} else {
+        $wgPerPageLicensePath = "{$wgStylePath}/common/images";
+}
+
 // Array of licenses.
 $wgPerPageLicenseLicenses = array (
         'cc-0' => array(
                 'url' => 'http://creativecommons.org/publicdomain/zero/1.0/',
-                'src' => "{$wgStylePath}/common/images/cc-by-sa.png",
+                'src' => "{$wgPerPageLicensePath}/cc-by-sa.png",
                 'alt' => 'Creative Commons 0',
         ),
         'cc-by-nc-sa' => array(
                 'url' => 'http://creativecommons.org/licenses/by-nc/3.0/',
-                'src' => "{$wgStylePath}/common/images/cc-by-nc-sa.png",
+                'src' => "{$wgPerPageLicensePath}/cc-by-nc-sa.png",
                 'alt' => 'Creative Commons Attribution-NonCommercial 3.0 Unported',
         ),
         'cc-by' => array(
                 'url' => 'http://creativecommons.org/licenses/by/3.0/',
-                'src' => "{$wgStylePath}/common/images/cc-by.png",
+                'src' => "{$wgPerPageLicensePath}/cc-by.png",
                 'alt' => 'Creative Commons Attribution 3.0 Unported',
         ),
         'cc-by-sa' => array(
                 'url' => 'http://creativecommons.org/licenses/by-sa/3.0/',
-                'src' => "{$wgStylePath}/common/images/cc-by-sa.png",
+                'src' => "{$wgPerPageLicensePath}/cc-by-sa.png",
                 'alt' => 'Creative Commons Attribution Share-Alike 3.0 Unported',
         ),
         'gnu-fdl' => array(
                 'url' => 'http://www.gnu.org/copyleft/fdl.html',
-                'src' => "{$wgStylePath}/common/images/gnu-fdl.png",
+                'src' => "{$wgPerPageLicensePath}/gnu-fdl.png",
                 'alt' => 'GNU Free Documentation License',
         ),
         'public-domain' => array(
                 'url' => 'http://creativecommons.org/licenses/publicdomain/',
-                'src' => "{$wgStylePath}/common/images/public-domain.png",
+                'src' => "{$wgPerPageLicensePath}/public-domain.png",
                 'alt' => 'public domain'
         ),
 );
+
 // Array of namespaces and their licenses.
 $wgPerPageLicenseNamespaces = array();
 
