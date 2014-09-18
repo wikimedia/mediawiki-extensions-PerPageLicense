@@ -51,7 +51,11 @@ $wgPerPageLicenseTemplatePage = 'MediaWiki:License-templates';
 // Path to license files.
 // Needs to be 1.24c because version_compare() works in confusing ways
 if ( version_compare( $wgVersion, '1.24c', '>=' ) ) {
-        $wgPerPageLicensePath = "{$wgScriptPath}/assets/licenses";
+        if ( $wgResourceBasePath !== null ) {
+                $wgPerPageLicensePath = "{$wgResourceBasePath}/resources/assets/licenses";
+        } else {
+                $wgPerPageLicensePath = "{$wgScriptPath}/resources/assets/licenses";
+        }
 } else {
         $wgPerPageLicensePath = "{$wgStylePath}/common/images";
 }
