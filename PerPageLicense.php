@@ -125,11 +125,7 @@ class PerPageLicense {
                         return true;
                 }
                 $licenseWikiPage = WikiPage::factory ( $licenseTitle );
-                if ( version_compare( $wgVersion, '1.21', '<' ) ) {
-                        $contents = $licenseWikiPage->getText( Revision::RAW );
-                } else {
-                        $contents = $licenseWikiPage->getContent( Revision::RAW );
-                }
+                $contents = ContentHandler::getContentText( $licenseWikiPage->getContent( Revision::RAW ) );
                 if ( !$contents ) {
                         return true;
                 }
