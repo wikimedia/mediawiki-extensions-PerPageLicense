@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Esketti"
+			"Esketti",
+			"Mainframe98"
 		]
 	},
-	"perpagelicense-desc": "Kunnen licenties worden ingesteld op een per-naamruimte of op basis van per pagina"
+	"perpagelicense-desc": "Bied de mogelijkheid om licenties op naamruimte of op pagina basis in te stellen"
 }
