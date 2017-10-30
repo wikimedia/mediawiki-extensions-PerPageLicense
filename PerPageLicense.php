@@ -42,7 +42,6 @@ $wgExtensionCredits['other'][] = array(
 );
 
 $wgMessagesDirs['PerPageLicense'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['PerPageLicense'] = dirname( __FILE__ ) . '/PerPageLicense.i18n.php';
 $wgHooks['ParserBeforeStrip'][] = 'PerPageLicense::getLicense';
 
 // Page from which to obtain templates and associated licenses.
