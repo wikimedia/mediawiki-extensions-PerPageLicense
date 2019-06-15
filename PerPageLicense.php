@@ -161,7 +161,7 @@ class PerPageLicense {
                         $sql .= "(tl_namespace=10 AND tl_title='$key')";
                 }
                 $sql .= ')';
-                $dbr = wfGetDB( DB_SLAVE );
+                $dbr = wfGetDB( DB_REPLICA );
                 $res = $dbr->selectRow( 'templatelinks', 'tl_title', array( $sql ) );
                 if ( $res ) {
                         $license = $templates[$res->tl_title];
