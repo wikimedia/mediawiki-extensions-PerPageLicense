@@ -42,7 +42,8 @@ $wgExtensionCredits['other'][] = array(
 );
 
 $wgMessagesDirs['PerPageLicense'] = __DIR__ . '/i18n';
-$wgHooks['ParserBeforeStrip'][] = 'PerPageLicense::getLicense';
+$wgHooks['ParserBeforePreprocess'][] = 'PerPageLicense::getLicense';
+$wgHooks['ParserBeforeInternalParse'][] = 'PerPageLicense::getLicense';
 
 // Page from which to obtain templates and associated licenses.
 $wgPerPageLicenseTemplatePage = 'MediaWiki:License-templates';
@@ -97,7 +98,7 @@ $wgPerPageLicenseLicenses = array (
 $wgPerPageLicenseNamespaces = array();
 
 class PerPageLicense {
-        public static function getLicense( &$parser, &$text, &$strip_state ) {
+        public static function getLicense( $parser, &$text, $strip_state ) {
                 global $wgRightsIcon, $wgRightsUrl, $wgRightsText, $wgFooterIcons,
                         $wgPerPageLicenseLicenses, $wgPerPageLicenseTemplatePage,
                         $wgPerPageLicenseNamespaces, $wgVersion;
