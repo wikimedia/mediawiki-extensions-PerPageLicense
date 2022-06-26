@@ -32,6 +32,8 @@ if( !defined( 'MEDIAWIKI' ) ) {
         die( 1 );
 }
 
+use MediaWiki\MediaWikiServices;
+
 $wgExtensionCredits['other'][] = array(
         'path' => __FILE__,
         'name' => 'PerPageLicense',
@@ -124,7 +126,12 @@ class PerPageLicense {
                 if ( !$licenseTitle->exists() ) {
                         return true;
                 }
-                $licenseWikiPage = WikiPage::factory ( $licenseTitle );
+                if ( method_exists( MediaWikiServices::class, 'getWikiPageFactory' ) ) {
+                    // MW 1.36+
+                    $licenseWikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $licenseTitle );
+                } else {
+                    $licenseWikiPage = WikiPage::factory ( $licenseTitle );
+                }
                 $contents = ContentHandler::getContentText( $licenseWikiPage->getContent( Revision::RAW ) );
                 if ( !$contents ) {
                         return true;
