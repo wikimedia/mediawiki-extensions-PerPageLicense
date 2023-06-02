@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Maxim21"
+			"Maxim21",
+			"Verdy p"
 		]
 	},
-	"perpagelicense-desc": "Fait en sorte que les licences soient mises en place selon l'espace de nom ou la page"
+	"perpagelicense-desc": "Fait en sorte que les licences puissent être définies selon l’espace de noms ou la page"
 }
